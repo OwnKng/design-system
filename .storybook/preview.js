@@ -1,3 +1,9 @@
+import { addDecorator } from "@storybook/react"
+import { withContexts } from "@storybook/addon-contexts/react"
+import { contexts } from "./contexts"
+import { GlobalStyles } from "../src/util"
+import { withA11y } from "@storybook/addon-a11y"
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +13,12 @@ export const parameters = {
     },
   },
 }
+
+addDecorator((s) => (
+  <>
+    <GlobalStyles />
+    {s()}
+  </>
+))
+addDecorator(withContexts(contexts))
+addDecorator(withA11y)

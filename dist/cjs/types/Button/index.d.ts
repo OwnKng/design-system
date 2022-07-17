@@ -1,10 +1,7 @@
-import { MouseEventHandler } from "react";
 interface ButtonProps {
-    text?: string;
-    primary?: boolean;
-    disabled?: boolean;
     size?: "small" | "medium" | "large";
-    onClick?: MouseEventHandler<HTMLButtonElement>;
 }
-declare const Button: ({ text, primary, disabled, onClick, size, ...props }: ButtonProps) => JSX.Element;
-export default Button;
+declare const PrimaryButton: import("styled-components").StyledComponent<"button", import("styled-components").DefaultTheme, ButtonProps, never>;
+declare const SecondaryButton: import("styled-components").StyledComponent<"button", import("styled-components").DefaultTheme, ButtonProps, never>;
+declare const TertiaryButton: import("styled-components").StyledComponent<"button", import("styled-components").DefaultTheme, ButtonProps, never>;
+export { PrimaryButton, SecondaryButton, TertiaryButton };

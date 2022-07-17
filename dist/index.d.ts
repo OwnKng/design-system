@@ -1,12 +1,31 @@
-import { MouseEventHandler } from 'react';
+import * as styled_components from 'styled-components';
 
 interface ButtonProps {
-    text?: string;
-    primary?: boolean;
-    disabled?: boolean;
     size?: "small" | "medium" | "large";
-    onClick?: MouseEventHandler<HTMLButtonElement>;
 }
-declare const Button: ({ text, primary, disabled, onClick, size, ...props }: ButtonProps) => JSX.Element;
+declare const PrimaryButton: styled_components.StyledComponent<"button", styled_components.DefaultTheme, ButtonProps, never>;
+declare const SecondaryButton: styled_components.StyledComponent<"button", styled_components.DefaultTheme, ButtonProps, never>;
+declare const TertiaryButton: styled_components.StyledComponent<"button", styled_components.DefaultTheme, ButtonProps, never>;
 
-export { Button };
+declare const lightTheme: {
+    colors: {
+        background: string;
+        paragraph: string;
+        primary: string;
+        secondary: string;
+        tertiary: string;
+    };
+};
+declare const darkTheme: {
+    colors: {
+        background: string;
+        paragraph: string;
+        primary: string;
+        secondary: string;
+        tertiary: string;
+    };
+};
+
+declare const GlobalStyles: styled_components.GlobalStyleComponent<{}, styled_components.DefaultTheme>;
+
+export { GlobalStyles, PrimaryButton, SecondaryButton, TertiaryButton, darkTheme, lightTheme };
